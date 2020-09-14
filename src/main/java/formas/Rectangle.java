@@ -1,7 +1,12 @@
 package formas;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.awt.*;
 
+@Getter
+@Setter
 public class Rectangle extends Form {
   private Double longSide;
   private Double shortSide;
