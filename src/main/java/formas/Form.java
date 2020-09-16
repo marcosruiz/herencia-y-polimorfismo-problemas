@@ -8,9 +8,9 @@ import java.awt.*;
 @Getter
 @Setter
 public abstract class Form {
-  private Color color;
-  private Point center;
-  private String name;
+  protected Color color;
+  protected Point center;
+  protected String name;
 
   public Form(Color color, Point center, String name) {
     this.color = color;

@@ -8,8 +8,8 @@ import java.awt.*;
 @Getter
 @Setter
 public class Rectangle extends Form {
-  private Double longSide;
-  private Double shortSide;
+  protected Double longSide;
+  protected Double shortSide;
 
   public Rectangle(Color color, Point center, String name) {
     super(color, center, name);
