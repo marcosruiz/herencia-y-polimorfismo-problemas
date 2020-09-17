@@ -10,38 +10,22 @@ import java.util.List;
 @Setter
 public class CentroDocente {
 
-  List<Estudiante> estudianteList;
-  List<Profesor> profesorList;
-  List<PersonalDeServicio> personalDeServicioList;
+  List<Persona> personaList;
 
   public CentroDocente() {
-    estudianteList = new ArrayList<>();
-    profesorList = new ArrayList<>();
-    personalDeServicioList = new ArrayList<>();
+    personaList = new ArrayList<>();
   }
 
-  public void altaPersona(Estudiante estudiante) {
-    estudianteList.add(estudiante);
-  }
-
-  public void altaPersona(Profesor profesor) {
-    profesorList.add(profesor);
-  }
-
-  public void altaPersona(PersonalDeServicio personalDeServicio) {
-    personalDeServicioList.add(personalDeServicio);
+  public void altaPersona(Persona persona) {
+    personaList.add(persona);
   }
 
   public void bajaPersona(String dni) {
-    estudianteList.stream().filter((x) -> x.getDni().equals(dni)).forEach((x) -> estudianteList.remove(x));
-    profesorList.stream().filter((x) -> x.getDni().equals(dni)).forEach((x) -> estudianteList.remove(x));
-    personalDeServicioList.stream().filter((x) -> x.getDni().equals(dni)).forEach((x) -> estudianteList.remove(x));
+    personaList.stream().filter((x) -> x.getDni().equals(dni)).forEach((x) -> personaList.remove(x));
   }
 
   public void imprimir() {
-    estudianteList.forEach((n) -> n.imprimir());
-    profesorList.forEach((n) -> n.imprimir());
-    personalDeServicioList.forEach((n) -> n.imprimir());
+    personaList.forEach((n) -> n.imprimir());
   }
 
 }
