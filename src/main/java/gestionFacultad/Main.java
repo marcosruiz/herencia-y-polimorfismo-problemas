@@ -23,6 +23,7 @@ public class Main {
     for(Persona p: personas){
       if(p.getClass().equals(PersonalDeServicio.class)){
         centroDocente.altaPersona((PersonalDeServicio) p);
+        centroDocente.bajaPersona(p.getDni());
       } else if(p.getClass().equals(Profesor.class)){
         centroDocente.altaPersona((Profesor) p);
       } else if(p.getClass().equals(Estudiante.class)){
@@ -30,6 +31,7 @@ public class Main {
       }
     }
     centroDocente.imprimir();
+
   }
 
   private static ArrayList<Persona> getPersonas() {

@@ -33,9 +33,20 @@ public class CentroDocente {
   }
 
   public void bajaPersona(String dni) {
-    estudianteList.stream().filter((x) -> x.getDni().equals(dni)).forEach((x) -> estudianteList.remove(x));
-    profesorList.stream().filter((x) -> x.getDni().equals(dni)).forEach((x) -> estudianteList.remove(x));
-    personalDeServicioList.stream().filter((x) -> x.getDni().equals(dni)).forEach((x) -> estudianteList.remove(x));
+    Object[] estudianteListFiltered = estudianteList.stream().filter((x) -> x.getDni().equals(dni)).toArray();
+    for (int i = 0; i < estudianteListFiltered.length; i++) {
+      personalDeServicioList.remove(estudianteListFiltered[i]);
+    }
+
+    Object[] profesorListFiltered = profesorList.stream().filter((x) -> x.getDni().equals(dni)).toArray();
+    for (int i = 0; i < profesorListFiltered.length; i++) {
+      personalDeServicioList.remove(profesorListFiltered[i]);
+    }
+
+    Object[] pdsListFiltered = personalDeServicioList.stream().filter((x) -> x.getDni().equals(dni)).toArray();
+    for (int i = 0; i < pdsListFiltered.length; i++) {
+      personalDeServicioList.remove(pdsListFiltered[i]);
+    }
   }
 
   public void imprimir() {
