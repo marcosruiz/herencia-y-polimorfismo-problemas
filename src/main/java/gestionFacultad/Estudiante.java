@@ -1,6 +1,5 @@
 package gestionFacultad;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,6 +16,6 @@ public class Estudiante extends Persona{
   @Override
   public void imprimir(){
     super.imprimir();
-    System.out.print(", estudiante, " + curso);
+    System.out.println(", estudiante, " + curso);
   }
 }

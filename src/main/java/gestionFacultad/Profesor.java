@@ -14,8 +14,7 @@ public class Profesor extends Empleado{
   }
 
   @Override
-  public void imprimir(){
-    super.imprimir();
-    System.out.print(", profesor, " + departamento);
+  public String getPuesto() {
+    return "profesor";
   }
 }

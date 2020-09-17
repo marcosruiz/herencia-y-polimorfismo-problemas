@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Empleado extends Persona {
+public abstract class Empleado extends Persona {
   private int anoDeIncorporacion;
   private int numDespacho;
 
@@ -16,6 +16,8 @@ public class Empleado extends Persona {
   @Override
   public void imprimir() {
     super.imprimir();
-    System.out.print(", empleado, " + anoDeIncorporacion + ", " + numDespacho);
+    System.out.println(", " + getPuesto() + ", " + anoDeIncorporacion + ", " + numDespacho);
   }
+
+  public abstract String getPuesto();
 }
