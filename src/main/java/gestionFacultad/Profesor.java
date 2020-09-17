@@ -17,4 +17,13 @@ public class Profesor extends Empleado{
   public String getPuesto() {
     return "profesor";
   }
+
+  @Override
+  public double getSueldo() {
+    if(getAnoDeIncorporacion()<2000){
+      return getSueldoBase() + getSueldoBase() * 0.08;
+    } else {
+      return getSueldoBase();
+    }
+  }
 }
