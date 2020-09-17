@@ -10,54 +10,42 @@ import java.util.List;
 @Setter
 public class CentroDocente {
 
-  List<Estudiante> estudianteList;
-  List<Profesor> profesorList;
-  List<PersonalDeServicio> personalDeServicioList;
+  List<Persona> personaList;
+  List<Empleado> empleadoList;
 
   public CentroDocente() {
-    estudianteList = new ArrayList<>();
-    profesorList = new ArrayList<>();
-    personalDeServicioList = new ArrayList<>();
+    personaList = new ArrayList<>();
+    empleadoList = new ArrayList<>();
   }
 
-  public void altaPersona(Estudiante estudiante) {
-    estudianteList.add(estudiante);
+  public void altaPersona(Persona persona) {
+    personaList.add(persona);
   }
 
-  public void altaPersona(Profesor profesor) {
-    profesorList.add(profesor);
-  }
-
-  public void altaPersona(PersonalDeServicio personalDeServicio) {
-    personalDeServicioList.add(personalDeServicio);
+  public void altaPersona(Empleado empleado) {
+    personaList.add(empleado);
+    empleadoList.add(empleado);
   }
 
   public void bajaPersona(String dni) {
-    Object[] estudianteListFiltered = estudianteList.stream().filter((x) -> x.getDni().equals(dni)).toArray();
-    for (int i = 0; i < estudianteListFiltered.length; i++) {
-      personalDeServicioList.remove(estudianteListFiltered[i]);
+    Object[] personaListFiltered = personaList.stream().filter((x) -> x.getDni().equals(dni)).toArray();
+    for (int i = 0; i < personaListFiltered.length; i++) {
+      personaList.remove(personaListFiltered[i]);
     }
 
-    Object[] profesorListFiltered = profesorList.stream().filter((x) -> x.getDni().equals(dni)).toArray();
-    for (int i = 0; i < profesorListFiltered.length; i++) {
-      personalDeServicioList.remove(profesorListFiltered[i]);
-    }
-
-    Object[] pdsListFiltered = personalDeServicioList.stream().filter((x) -> x.getDni().equals(dni)).toArray();
-    for (int i = 0; i < pdsListFiltered.length; i++) {
-      personalDeServicioList.remove(pdsListFiltered[i]);
+    Object[] empleadoListFiltered = empleadoList.stream().filter((x) -> x.getDni().equals(dni)).toArray();
+    for (int i = 0; i < empleadoListFiltered.length; i++) {
+      empleadoList.remove(empleadoListFiltered[i]);
     }
   }
 
   public void imprimir() {
-    estudianteList.forEach((n) -> n.imprimir());
-    profesorList.forEach((n) -> n.imprimir());
-    personalDeServicioList.forEach((n) -> n.imprimir());
+    personaList.forEach((n) -> n.imprimir());
+    empleadoList.forEach((n) -> n.imprimir());
   }
 
   public void imprimirSalario() {
-    profesorList.forEach((n) -> n.imprimirSalario());
-    personalDeServicioList.forEach((n) -> n.imprimirSalario());
+    empleadoList.forEach((n) -> n.imprimirSalario());
   }
 
 }
