@@ -21,7 +21,10 @@ public class CentroDocente {
   }
 
   public void bajaPersona(String dni) {
-    personaList.stream().filter((x) -> x.getDni().equals(dni)).forEach((x) -> personaList.remove(x));
+    Object[] personaListFiltered = personaList.stream().filter((x) -> x.getDni().equals(dni)).toArray();
+    for (int i = 0; i < personaListFiltered.length; i++) {
+      personaList.remove(personaListFiltered[i]);
+    }
   }
 
   public void imprimir() {
