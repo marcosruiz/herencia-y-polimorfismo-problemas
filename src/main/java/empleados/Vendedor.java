@@ -17,7 +17,7 @@ public class Vendedor extends Empleado{
 
   public Vendedor(String nombre, String apellidos, String dni, String direccion, String telefono, double salario) {
     super(nombre, apellidos, dni, direccion, telefono, salario);
-    super.incremento = 0.10;
+    incremento = 0.10;
   }
 
   public void altaCliente(Cliente nuevoCliente){
