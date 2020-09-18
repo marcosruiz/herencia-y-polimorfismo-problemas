@@ -1,6 +1,6 @@
 package listinProfesores;
 
-public class Profesor extends Persona { //Ejemplo aprenderaprogramar.com
+public class Profesor extends Persona {
   private String idProfesor;
 
   public Profesor() {
