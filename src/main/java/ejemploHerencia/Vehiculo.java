@@ -1,4 +1,4 @@
-package primerEjemplo;
+package ejemploHerencia;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -25,4 +25,5 @@ public class Vehiculo {
     this.color = color;
     this.numSerie = numSerie;
   }
+
 }

@@ -1,6 +1,4 @@
-package primerEjemplo;
-
-import java.awt.*;
+package ejemploHerencia;
 
 public class Barco extends Vehiculo{
   /**
